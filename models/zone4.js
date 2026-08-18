@@ -24,6 +24,7 @@ const researchPaperSchema = new Schema({
 const facultyProfileSchema = new Schema({
   name:        { type: String, required: true },
   designation: { type: String, required: true },
+  photo: { type: String, required: true },
   achievementsAndHonors: [achievementSchema],
   projects:              [projectSchema],
   researchPapers:        [researchPaperSchema]
