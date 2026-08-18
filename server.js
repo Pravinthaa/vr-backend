@@ -4,10 +4,8 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 const zone1Routes = require("./routes/zone1Routes");
-//const zone2Routes = require("./routes/zone2Routes");
-//const zone3Routes = require("./routes/zone3Routes");
-//const zone4Routes = require("./routes/zone4Routes");
-//const zone5Routes = require("./routes/zone5Routes");
+const zone2Routes = require("./routes/zone2Routes");
+const zone4Routes = require("./routes/zone4Routes");
 
 
 const app = express();
@@ -31,10 +29,8 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/zone1", zone1Routes);
-//app.use("/api/zone2", zone2Routes);
-//app.use("/api/zone3", zone3Routes);
-//app.use("/api/zone4", zone4Routes);
-//app.use("/api/zone5", zone5Routes);
+app.use("/api/zone2", zone2Routes);
+app.use("/api/zone4", zone4Routes);
 
 // 404
 app.use((req, res) => {
