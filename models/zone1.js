@@ -31,6 +31,28 @@ const eventSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    clubName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    websiteLink: {
+      type: String,
+      trim: true,
+    },
+    // see more
+    eventName: {
+      type: String,
+      trim: true,
+    },
+    date: {
+      type: String,
+      trim: true,
+    },
+    video: {
+      type: String,
+      trim: true, 
+    },
     specifications: {
       type: [specificationSchema],
       default: [],
