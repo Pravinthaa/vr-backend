@@ -49,10 +49,6 @@ const eventSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
-    video: {
-      type: String,
-      trim: true, 
-    },
     specifications: {
       type: [specificationSchema],
       default: [],
