@@ -1,22 +1,19 @@
-
 const mongoose = require('mongoose');
-
 
 const categorySchema = new mongoose.Schema(
   {
     id: {
-      
       type: String,
       required: true,
       unique: true,
       trim: true,
     },
-    number: { type: String, required: true, trim: true }, 
+    number: { type: String, required: true, trim: true },
     name: { type: String, required: true, trim: true },
     tagline: { type: String, required: true, trim: true },
     description: { type: String, required: true, trim: true },
-    count: { type: String, default: '0' }, 
-    icon: { type: String, trim: true }, 
+    count: { type: String, default: '0' },
+    icon: { type: String, trim: true },
   },
   {
     timestamps: true,
@@ -24,28 +21,25 @@ const categorySchema = new mongoose.Schema(
   }
 );
 
-
 const projectSchema = new mongoose.Schema(
   {
     categoryId: {
-      
       type: String,
       required: true,
       trim: true,
     },
     slug: {
-      
       type: String,
       required: true,
       trim: true,
     },
     name: { type: String, required: true, trim: true },
     year: { type: String, trim: true },
-    tags: { type: [String], default: [] },
-    shortDesc: { type: String, trim: true },
-    problemStatement: { type: String, required: true },
-    solutionOverview: { type: String, required: true },
-    techStack: { type: [String], default: [] },
+    programme: { type: String, trim: true },
+    title: { type: String, required: true, trim: true },
+    description: { type: String, required: true, trim: true },
+    class: { type: String, trim: true },
+    githubLink: { type: String, trim: true },
   },
   {
     timestamps: true,
@@ -53,21 +47,17 @@ const projectSchema = new mongoose.Schema(
   }
 );
 
-
 projectSchema.index({ categoryId: 1, slug: 1 }, { unique: true });
-
 
 const secretarySchema = new mongoose.Schema(
   {
     categoryId: {
-      
       type: String,
       required: true,
       default: 'secretaries',
       trim: true,
     },
     slug: {
-      
       type: String,
       required: true,
       unique: true,
@@ -75,9 +65,9 @@ const secretarySchema = new mongoose.Schema(
     },
     name: { type: String, required: true, trim: true },
     club: { type: String, required: true, trim: true },
-    class: { type: String, trim: true }, 
+    class: { type: String, trim: true },
     position: { type: String, required: true, trim: true },
-    year: { type: String, trim: true }, 
+    year: { type: String, trim: true },
   },
   {
     timestamps: true,
@@ -85,18 +75,15 @@ const secretarySchema = new mongoose.Schema(
   }
 );
 
-
 const achievementSchema = new mongoose.Schema(
   {
     categoryId: {
-      
       type: String,
       required: true,
       default: 'achievements',
       trim: true,
     },
     slug: {
-      
       type: String,
       required: true,
       unique: true,
@@ -104,9 +91,9 @@ const achievementSchema = new mongoose.Schema(
     },
     title: { type: String, required: true, trim: true },
     description: { type: String, required: true, trim: true },
-    name: { type: String, required: true, trim: true }, 
+    name: { type: String, required: true, trim: true },
     rollNo: { type: String, required: true, trim: true },
-    class: { type: String, required: true, trim: true }, 
+    class: { type: String, required: true, trim: true },
   },
   {
     timestamps: true,
