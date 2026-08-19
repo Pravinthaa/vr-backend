@@ -38,6 +38,8 @@ const projectSchema = new mongoose.Schema(
     programme: { type: String, trim: true },
     title: { type: String, required: true, trim: true },
     description: { type: String, required: true, trim: true },
+    problemStatement: { type: String, required: true, trim: true },
+    solutionOverview: { type: String, required: true, trim: true },
     class: { type: String, trim: true },
     githubLink: { type: String, trim: true },
   },
