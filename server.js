@@ -29,8 +29,8 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/zone1", zone1Routes);
-app.use("/api/zone2", zone2Routes);
-app.use("/api/zone4", zone4Routes);
+app.use("/api/projects", zone2Routes);
+app.use("/api/faculty", zone4Routes);
 
 // 404
 app.use((req, res) => {

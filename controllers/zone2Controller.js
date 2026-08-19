@@ -1,4 +1,4 @@
-
+// controllers/zone2Controller.js
 const { Category, Project, Secretary, Achievement } = require('../models/zone2');
 
 // GET /api/projects/categories
@@ -32,13 +32,13 @@ exports.getProjectsByCategory = async (req, res) => {
 
     if (categoryId === 'achievements') {
       const achievements = await Achievement.find().select(
-        'categoryId slug title name rollNo class -_id'
+        'categoryId slug title description name rollNo class -_id'
       );
       return res.json(achievements);
     }
 
     const projects = await Project.find({ categoryId }).select(
-      'categoryId slug name year shortDesc tags -_id'
+      'categoryId slug name title year programme description class githubLink -_id'
     ); 
     res.json(projects);
   } catch (err) {
