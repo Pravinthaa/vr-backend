@@ -40,12 +40,20 @@ const eventSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    photo: {
+      type: String,
+      trim: true,
+    },
     // see more
     eventName: {
       type: String,
       trim: true,
     },
     date: {
+      type: String,
+      trim: true,
+    },
+    video: {
       type: String,
       trim: true,
     },
